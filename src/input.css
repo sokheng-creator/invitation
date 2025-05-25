@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midpurple:#7b629a;
+  --color-darkpurlple:#4e297b;
+  --font-AKbalthom: "AKbalthom";
+  --font-KhmerOSBassac: "KhmerOSBassac";
+  --font-Moul: "Moul";
+}
+
+@font-face {
+  font-family: 'AKbalthom';
+  src: url('fonts/AKbalthom KhmerBasic.ttf') format('truetype');
+  font-weight: normal; 
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KhmerOSBassac';
+  src: url('fonts/KhmerOSBassac.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Moul';
+  src: url('fonts/Moul.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar{
+  scrollbar-width: none;
+}
