@@ -4,14 +4,23 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Invitation</title>
 	<link href="main.css" rel="stylesheet">
 </head>
 
 <body class="m-0 p-0">
-	<audio controls autoplay loop hidden>
+	<!-- <audio id="bg-audio" controls autoplay loop>
     <source src="musics/ALL3RGY - សរយ (អតសវល)  Lyrics FT. JENNA NORODOM (LACIMA CARTEL).mp3" type="audio/mpeg">
-  </audio> 
+  </audio>  -->
+	<!-- Hidden Audio -->
+  <audio id="bg-music" loop>
+    <source src="musics/ALL3RGY - សរយ (អតសវល)  Lyrics FT. JENNA NORODOM (LACIMA CARTEL).mp3" type="audio/mpeg" />
+    Your browser does not support the audio tag.
+  </audio>
+
+  <!-- Optional Play Notice -->
+  <div id="play-hint" style="position: fixed; top: 10px; left: 10px; padding: 10px; z-index: 9999;">
+  </div>
 	<div class="relative h-screen flex items-center justify-center bg-no-repeat bg-cover
 
     bg-[url(img/purplesvg/3.png)]
@@ -226,7 +235,18 @@
 
 	<script>
 		
+		const audio = document.getElementById('bg-music');
+    const playHint = document.getElementById('play-hint');
 
+    const tryPlay = () => {
+      audio.play().then(() => {
+        playHint.style.display = 'none';
+      }).catch(err => {
+        console.log("Autoplay blocked:", err);
+      });
+    };
+		tryPlay();
+    document.addEventListener('click', tryPlay, { once: true });
 
 		function updateCountdown() {
 			const now = new Date();
