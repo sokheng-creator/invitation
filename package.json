@@ -8,7 +8,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/main.css --minify"
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./docs/main.css --minify"
   },
   "keywords": [],
   "author": "",
